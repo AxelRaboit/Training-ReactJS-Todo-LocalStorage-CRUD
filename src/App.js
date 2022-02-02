@@ -80,7 +80,7 @@ const App = () => {
 
   //Variable permettant en prenant en parametre un id d'afficher un message d'alert et de retirer l'item de la liste
   const removeItem = (id) => {
-    showAlert(true, "danger", "Item Removed");
+    showAlert(true, "danger", "Tâche effacé");
     setList(list.filter((item) => item.id !== id));
   }
 

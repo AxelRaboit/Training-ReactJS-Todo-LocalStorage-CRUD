@@ -23,7 +23,7 @@ const App = () => {
   //Création du state pour la liste, avec comme valeur par default le localstorage, qui soit renvoi la liste soit renvoi un tableau vide
   const [list, setList] = useState(getLocalStorage());
   //Création du state pour l'edition qui par default est sur "false" permettant d'afficher soit le bouton "Soumettre" ou "Modifier"
-  const [isEditing, setIdEditing] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
   //Création du state pour l'id de l'edit, qui par default est sur "null"
   const [editId, setEditId] = useState(null);
   //Création du state pour le message d'alert concernant les actions effectué du crud, avec leurs valeurs par default
@@ -57,7 +57,7 @@ const App = () => {
       //Remise à la valeur initial
       setEditId(null);
       //Remise à la valeur initial
-      setIdEditing(false);
+      setIsEditing(false);
       //Affichage du message d'alert
       showAlert(true, "success", "Tâche modifiée");
       //Condition d'ajout d'un item
@@ -87,7 +87,7 @@ const App = () => {
   //Variable permettant l'edition prenant en parametre l'id
   const editItem = (id) => {
     const editItem = list.find((item) => item.id === id);
-    setIdEditing(true);
+    setIsEditing(true);
     setEditId(id);
     setName(editItem.title);
   }
